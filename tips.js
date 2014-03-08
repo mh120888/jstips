@@ -1,25 +1,23 @@
 $( document ).ready(function() {
-  BillCalculations.bindEvents();
+  BillController.bindEvents();
 });
 
-// var BillController = {
-//   bindEvents: function() {
-//     $("#bill").submit(BillCalculations.calculateBillAndTip);
-//   },
-//   calculateAndDisplay: function() {
-//     event.preventDefault();
-//   }
-// }
+var BillController = {
+  bindEvents: function() {
+    $("#bill").submit(BillController.calculateAndDisplay);
+  },
+  calculateAndDisplay: function() {
+    event.preventDefault();
+    BillCalculations.calculateBillAndTip();
+    BillViewer.displayBillWithTip();
+  }
+}
 
 var BillCalculations = {
   tip: 0,
   billTotal: 0,
   tipPercentage: 0.15,
-  bindEvents: function() {
-    $("#bill").submit(BillCalculations.calculateBillAndTip);
-  },
   calculateBillAndTip: function() {
-    event.preventDefault();
     BillCalculations.assignBillTotal();
     BillCalculations.addTip();
     BillViewer.displayBillWithTip();
