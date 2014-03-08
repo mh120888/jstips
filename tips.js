@@ -19,11 +19,15 @@ var BillCalculations = {
   tipPercentage: 0.15,
   calculateBillAndTip: function() {
     BillCalculations.assignBillTotal();
+    BillCalculations.assignTipPercentage();
     BillCalculations.addTip();
     BillViewer.displayBillWithTip();
   },
   assignBillTotal: function() {
     BillCalculations.billTotal = parseFloat($('input[name="total"]').val());
+  },
+  assignTipPercentage: function() {
+    BillCalculations.tipPercentage = $('input[name="tip"]').val()/100
   },
   addTip: function() {
     BillCalculations.billTotal = BillCalculations.billTotal * (1 + BillCalculations.tipPercentage);
