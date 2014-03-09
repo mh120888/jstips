@@ -1,6 +1,14 @@
 $( document ).ready(function() {
   BillController.bindEvents();
+  ChoiceController.bindEvents();
 });
+
+var ChoiceController = {
+  bindEvents: function() {
+    $('#range a').on('click', BillViewer.toggleSlider);
+    $('#impression a').on('click', BillViewer.toggleChoices);
+  }
+};
 
 var BillController = {
   bindEvents: function() {
@@ -17,7 +25,7 @@ var BillController = {
     BillCalculations.calcBillAndTip($(this));
     BillViewer.displayBillWithTip();
   },
-}
+};
 
 var BillCalculations = {
   tip: 0,
@@ -40,7 +48,7 @@ var BillCalculations = {
     BillCalculations.billTotal = parseFloat($('input[name="total"]').val());
   },
   assignTipPercentage: function() {
-    BillCalculations.tipPercentage = $('input[name="tip"]').val()/100
+    BillCalculations.tipPercentage = $('input[name="tip"]').val()/100;
   },
   addTip: function() {
     BillCalculations.billTotal = BillCalculations.billTotal * (1 + BillCalculations.tipPercentage);
@@ -50,5 +58,13 @@ var BillCalculations = {
 var BillViewer = {
   displayBillWithTip: function() {
     $('#bill-with-tip').html("Bill w/tip: $ " + BillCalculations.billTotal.toFixed(2));
+  },
+  toggleSlider: function() {
+    $('#choices').hide();
+    $('#slider').show();
+  },
+  toggleChoices: function() {
+    $('#slider').hide();
+    $('#choices').show();
   }
-}
+};

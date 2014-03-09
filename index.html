@@ -3,19 +3,22 @@
 <head>
   <script src='jquery.min.js'></script>
   <script src='tips.js'></script>
+  <link rel="stylesheet" type="text/css" href="tips.css">
 </head>
 <title></title>
 
 <body>
   <h1>Cheeky Tips!</h1>
-
+  <p>Calculate by:</p>
+  <span id='range'><a href="#">Percentage</a>
+  <span id='impression'><a href="#" id='impression'>Impression</a></span>
 
   <form action='#' method='get' id='bill'>
     Bill w/o Tip: <input type='text' name='total'><br/>
-    <div id='slider'>
+    <div id='slider' class='hidden'>
       Tip:  1%<input type="range" name="tip" min="1" max="30" value="15">30%<br/>
     </div>
-    <div id='choices'>
+    <div id='choices' class='hidden'>
       <a id='amazing' data-tip='0.30' href="#">Amazing!</a>
       <a id='pretty-good' data-tip='0.20' href="#">Pretty Good</a>
       <a id='decent' data-tip='0.15' href="#">Decent</a>
