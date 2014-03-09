@@ -1,7 +1,7 @@
 <DOCTYPE !HTML>
 <html>
 <head>
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src='jquery.min.js'></script>
   <script src='tips.js'></script>
 </head>
 <title></title>
@@ -12,7 +12,19 @@
 
   <form action='#' method='get' id='bill'>
     Bill w/o Tip: <input type='text' name='total'><br/>
-    Tip:  1%<input type="range" name="tip" min="1" max="30" value="15">30%<br/>
+    <div id='slider'>
+      Tip:  1%<input type="range" name="tip" min="1" max="30" value="15">30%<br/>
+    </div>
+    <div id='choices'>
+      <a id='amazing' href="#">Amazing!</a>
+      <a id='decent' href="#">Decent</a>
+      <a id='meh' href="#">Meh...</a>
+      <a id='terrible' href="#">Terrible!</a>
+ <!--      <input type="button" name='amazing' value='amazing'>
+      <input type="button" name='decent' value='decent'>
+      <input type="button" name='meh' value='meh'>
+      <input type="button" name='terrible' value='terrible'> -->
+    </div>
     <input type="submit" value="Calculate Tip" class='bill'>
   </form>
 

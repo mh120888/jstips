@@ -5,12 +5,16 @@ $( document ).ready(function() {
 var BillController = {
   bindEvents: function() {
     $("#bill").submit(BillController.calculateAndDisplay);
+    $('#choices a').on('click', BillController.eventHandler);
   },
   calculateAndDisplay: function() {
     event.preventDefault();
     BillCalculations.calculateBillAndTip();
     BillViewer.displayBillWithTip();
-  }
+  },
+  eventHandler: function() {
+    debugger;
+  },
 }
 
 var BillCalculations = {
