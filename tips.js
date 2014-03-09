@@ -5,15 +5,17 @@ $( document ).ready(function() {
 var BillController = {
   bindEvents: function() {
     $("#bill").submit(BillController.calculateAndDisplay);
-    $('#choices a').on('click', BillController.eventHandler);
+    $('#choices a').on('click', BillController.calcAndShow);
   },
   calculateAndDisplay: function() {
     event.preventDefault();
     BillCalculations.calculateBillAndTip();
     BillViewer.displayBillWithTip();
   },
-  eventHandler: function() {
-    debugger;
+  calcAndShow: function() {
+    event.preventDefault();
+    BillCalculations.calcBillAndTip($(this));
+    BillViewer.displayBillWithTip();
   },
 }
 
@@ -25,7 +27,14 @@ var BillCalculations = {
     BillCalculations.assignBillTotal();
     BillCalculations.assignTipPercentage();
     BillCalculations.addTip();
-    BillViewer.displayBillWithTip();
+  },
+  calcBillAndTip: function(scope) {
+    BillCalculations.assignBillTotal();
+    BillCalculations.grabTipPercentage(scope);
+    BillCalculations.addTip();
+  },
+  grabTipPercentage: function(scope) {
+    BillCalculations.tipPercentage = parseFloat(scope.attr('data-tip'));
   },
   assignBillTotal: function() {
     BillCalculations.billTotal = parseFloat($('input[name="total"]').val());
