@@ -46,6 +46,9 @@ var BillCalculations = {
   },
   assignBillTotal: function() {
     BillCalculations.billTotal = parseFloat($('input[name="total"]').val());
+    if ( isNaN(BillCalculations.billTotal) ) {
+      BillCalculations.billTotal = 0;
+    }
   },
   assignTipPercentage: function() {
     BillCalculations.tipPercentage = $('input[name="tip"]').val()/100;
