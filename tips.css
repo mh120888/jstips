@@ -93,7 +93,7 @@ form#bill {
   font-size: 2em;
 }
 
-@media screen and (max-width: 1040px) {
+@media screen and (max-width: 1120px) {
 
 #selection #range a {
   float: none;
