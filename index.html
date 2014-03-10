@@ -9,13 +9,15 @@
 
 <body>
   <h1>How Much Do I Pay?</h1>
-  <span id='range'><a href="#">Choose by Percentage</a></span>
-  <span id='impression'><a href="#" id='impression'>Choose by Impression</a></span>
+  <div id='selection'>
+    <div id='range'><a href="#">Choose by Percentage</a></div>
+    <div id='impression'><a href="#" id='impression'>Choose by Impression</a></div>
+  </div>
 
   <form action='#' method='get' id='bill'>
-    Bill w/o Tip: <input type='text' name='total'><br/>
+    Bill w/o Tip:  $ <input class='total' type='text' name='total'><br/>
     <div id='slider' class='hidden'>
-      Tip:  1%<input type="range" name="tip" min="1" max="30" value="15">30%<br/>
+      1% <input class='range' type="range" name="tip" min="1" max="30" value="15"> 30%<br/>
     </div>
     <div id='choices' class='hidden'>
       <a id='amazing' data-tip='0.30' href="#">Amazing!</a>
@@ -24,7 +26,7 @@
       <a id='meh' data-tip='0.1' href="#">Meh...</a>
       <a id='terrible' data-tip='0.05' href="#">Terrible!</a>
     </div>
-    <input type="submit" value="Calculate Tip" class='bill'>
+    <input type="submit" value="Show Tip" class='bill button'>
   </form>
 
   <div id='bill-with-tip'>

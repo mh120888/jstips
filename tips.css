@@ -1,3 +1,112 @@
+body {
+  text-align: center;
+  background: #eee;
+  color: #333;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+h1 {
+  margin: 1.5em;
+  font-size: 2.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+#selection a {
+  font-size: 2em;
+}
+
 .hidden {
   display: none;
 }
+
+div#selection {
+  width: 75%;
+  margin: 0 auto;
+}
+
+#selection a, .button {
+  margin-bottom: 1.2em;
+  padding: 1em;
+  border-radius: 8px;
+  color: white;
+  background-color: #333;
+}
+
+#selection a:hover, .button:hover, #choices a:hover {
+  background-color: #412C84;
+}
+
+#range a {
+  float: left;
+}
+
+#impression a {
+  float: right;
+}
+
+#slider {
+  margin: 1em;
+}
+
+input[type=text] {
+  height: 0.5em;
+  font-size: 0.8em;
+}
+
+input[type=range] {
+  width: 30%;
+}
+
+input.total {
+  padding: 1em;
+  position: relative;
+  top: -5px;
+}
+
+form#bill {
+  font-size: 2em;
+  clear: both;
+}
+
+#choices a {
+  background: #333;
+  color: white;
+  padding: 0.4em;
+  display: block;
+  margin: 1em auto;
+  width: 20%;
+  min-width: 250px;
+  border-radius: 8px;
+}
+
+.button {
+  border: none;
+  margin-top: 1em;
+  font-size: 0.5em;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#bill-with-tip {
+  font-size: 2em;
+}
+
+@media screen and (max-width: 1040px) {
+
+#selection #range a {
+  float: none;
+}
+
+#selection #impression a {
+  float: none;
+}
+
+#selection div {
+  margin: 5em auto;
+}
+
+}
+
+

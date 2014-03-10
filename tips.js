@@ -61,10 +61,12 @@ var BillViewer = {
   },
   toggleSlider: function() {
     $('#choices').hide();
+    $('input[type="submit"]').show()
     $('#slider').show();
   },
   toggleChoices: function() {
     $('#slider').hide();
+    $('input[type="submit"]').hide()
     $('#choices').show();
   }
 };
