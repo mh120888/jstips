@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background: #eee;
+  background: url('img/fabric_of_squares_gray.png'), #eee;
   color: #333;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
@@ -23,13 +23,13 @@ a {
 }
 
 div#selection {
-  width: 75%;
-  margin: 0 auto;
+  width: 65%;
+  margin: 20px auto 0;
 }
 
 #selection a, .button {
   margin-bottom: 1.2em;
-  padding: 1em;
+  padding: 0.7em;
   border-radius: 8px;
   color: white;
   background-color: #333;
