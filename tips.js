@@ -12,15 +12,15 @@ var ChoiceController = {
 
 var BillController = {
   bindEvents: function() {
-    $("#bill").submit(BillController.calculateAndDisplay);
-    $('#choices a').on('click', BillController.calcAndShow);
+    $("#bill").submit(BillController.calcAndDisplayOnPercentage);
+    $('#choices a').on('click', BillController.calcAndDisplayOnImpression);
   },
-  calculateAndDisplay: function() {
+  calcAndDisplayOnPercentage: function() {
     event.preventDefault();
     BillCalculations.calculateBillAndTip();
     BillViewer.displayBillWithTip();
   },
-  calcAndShow: function() {
+  calcAndDisplayOnImpression: function() {
     event.preventDefault();
     BillCalculations.calcBillAndTip($(this));
     BillViewer.displayBillWithTip();
@@ -65,9 +65,6 @@ var BillViewer = {
     $('#bill-with-tip').html("<p>Tip is: $ " + BillCalculations.tip.toFixed(2) + "</p>"
       + "<p>Total: $ " + BillCalculations.addTip().toFixed(2) + "</p>");
   },
-  // displayTipAmount: function() {
-  //   $('#bill-with-tip').html("Tip is: $ " + BillCalculations.calculateTip().toFixed(2));
-  // },
   toggleSlider: function() {
     $('#choices').hide();
     $('input[type="submit"]').show()
