@@ -1,7 +1,8 @@
 body {
   text-align: center;
-  background: url('img/fabric_of_squares_gray.png'), #eee;
+  background: url('img/02.png'), #eee;
   color: #333;
+  text-shadow: white 1px 1px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
@@ -10,8 +11,12 @@ h1 {
   font-size: 2.5em;
 }
 
-a {
+a, .button {
   text-decoration: none;
+  border-radius: 8px;
+  text-shadow: none;
+  color: white;
+  background-color: gray;
 }
 
 #selection a {
@@ -30,13 +35,10 @@ div#selection {
 #selection a, .button {
   margin-bottom: 1.2em;
   padding: 0.7em;
-  border-radius: 8px;
-  color: white;
-  background-color: #333;
 }
 
 #selection a:hover, .button:hover, #choices a:hover {
-  background-color: #412C84;
+  background-color: #C3D7E0;
 }
 
 #range a {
@@ -72,20 +74,17 @@ form#bill {
 }
 
 #choices a {
-  background: #333;
-  color: white;
   padding: 0.4em;
   display: block;
   margin: 1em auto;
   width: 20%;
   min-width: 250px;
-  border-radius: 8px;
 }
 
 .button {
   border: none;
   margin-top: 1em;
-  font-size: 0.5em;
+  font-size: 1em;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
@@ -107,6 +106,10 @@ form#bill {
   margin: 5em auto;
 }
 
+input[type=range] {
+  width: 80%;
 }
 
+}
 
+/*@media screen and (max-width: )*/

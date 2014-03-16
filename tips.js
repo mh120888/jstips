@@ -70,12 +70,20 @@ var BillViewer = {
   },
   toggleSlider: function() {
     $('#choices').hide();
-    $('input[type="submit"]').show()
+    $('input[type="submit"]').show();
     $('#slider').show();
+    BillViewer.scrollToChoices();
   },
   toggleChoices: function() {
     $('#slider').hide();
-    $('input[type="submit"]').hide()
+    $('input[type="submit"]').hide();
     $('#choices').show();
+    BillViewer.scrollToChoices();
+  },
+  scrollToChoices: function() {
+    event.preventDefault();
+    $('html, body').animate({
+    scrollTop: $('#bill-with-tip').offset().top
+    }, 600);
   }
 };
