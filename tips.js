@@ -12,15 +12,15 @@ var ChoiceController = {
 
 var BillController = {
   bindEvents: function() {
-    $("#bill").submit(BillController.calculateAndDisplay);
-    $('#choices a').on('click', BillController.calcAndShow);
+    $("#bill").submit(BillController.calcAndDisplayOnPercentage);
+    $('#choices a').on('click', BillController.calcAndDisplayOnImpression);
   },
-  calculateAndDisplay: function() {
+  calcAndDisplayOnPercentage: function() {
     event.preventDefault();
     BillCalculations.calculateBillAndTip();
     BillViewer.displayBillWithTip();
   },
-  calcAndShow: function() {
+  calcAndDisplayOnImpression: function() {
     event.preventDefault();
     BillCalculations.calcBillAndTip($(this));
     BillViewer.displayBillWithTip();
@@ -29,16 +29,18 @@ var BillController = {
 
 var BillCalculations = {
   tip: 0,
-  billTotal: 0,
+  billWithoutTip: 0,
   tipPercentage: 0.15,
   calculateBillAndTip: function() {
     BillCalculations.assignBillTotal();
     BillCalculations.assignTipPercentage();
+    BillCalculations.calculateTip();
     BillCalculations.addTip();
   },
   calcBillAndTip: function(scope) {
     BillCalculations.assignBillTotal();
     BillCalculations.grabTipPercentage(scope);
+    BillCalculations.calculateTip();
     BillCalculations.addTip();
   },
   grabTipPercentage: function(scope) {
@@ -54,13 +56,17 @@ var BillCalculations = {
     BillCalculations.tipPercentage = $('input[name="tip"]').val()/100;
   },
   addTip: function() {
-    BillCalculations.billTotal = BillCalculations.billTotal * (1 + BillCalculations.tipPercentage);
+    return BillCalculations.billTotal + BillCalculations.tip;
+  },
+  calculateTip: function() {
+    BillCalculations.tip = BillCalculations.billTotal * BillCalculations.tipPercentage;
   }
 };
 
 var BillViewer = {
   displayBillWithTip: function() {
-    $('#bill-with-tip').html("Bill w/tip: $ " + BillCalculations.billTotal.toFixed(2));
+    $('#bill-with-tip').html("<p>Tip is: $ " + BillCalculations.tip.toFixed(2) + "</p>"
+      + "<p>Total: $ " + BillCalculations.addTip().toFixed(2) + "</p>");
   },
   toggleSlider: function() {
     $('#choices').hide();
