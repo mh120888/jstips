@@ -55,21 +55,14 @@ div#selection {
 
 input[type=text] {
   height: 0.5em;
-  font-size: 0.8em;
-}
-
-input[type=range] {
-  width: 30%;
-}
-
-input.total {
+  font-size: 28px;
   padding: 1em;
   position: relative;
   top: -5px;
 }
 
 form#bill {
-  font-size: 2em;
+  font-size: 30px;
   clear: both;
 }
 
@@ -94,21 +87,17 @@ form#bill {
 
 @media screen and (max-width: 1120px) {
 
-#selection #range a {
-  float: none;
-}
+  #selection #range a {
+    float: none;
+  }
 
-#selection #impression a {
-  float: none;
-}
+  #selection #impression a {
+    float: none;
+  }
 
-#selection div {
-  margin: 5em auto;
-}
-
-input[type=range] {
-  width: 80%;
-}
+  #selection div {
+    margin: 5em auto;
+  }
 
 }
 
