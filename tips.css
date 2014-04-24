@@ -6,8 +6,9 @@ body {
 
 #header {
   background: #CC0000;
-  margin: -40px -8px 100px -8px;
+  margin: -40px -8px 40px -8px;
   padding: 8px 0 8px 0;
+  box-shadow: 0 2px 5px #333;
 }
 
 h1 {
@@ -17,9 +18,10 @@ h1 {
 form {
   width: 204px;
   margin: 0 auto;
-  text-align: right;
 }
 
 input {
-  width: 30px;
+  width: 100px;
+  font-size: 26px;
+  margin: 6px 0;
 }
