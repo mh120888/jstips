@@ -1,36 +1,29 @@
 <DOCTYPE !HTML>
 <head>
-  <script src='jquery.min.js'></script>
-  <script src='tips.js'></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
+  <script src="app.js" type="text/javascript"></script>
+  <script src="maincontroller.js" type="text/javascript"></script>
   <link rel="stylesheet" type="text/css" href="tips.css">
-<title></title>
+  <title>QuickTips</title>
 </head>
 <html>
-
 <body>
-  <div id='selection'>
-    <div id='range'><a href="#">Choose by Percentage</a></div>
-    <div id='impression'><a href="#" id='impression'>Choose by Impression</a></div>
-  </div>
+  <div id='wrapper' ng-app='QuickTips' ng-controller='MainController'>
 
-  <form action='#' method='get' id='bill'>
-    Bill w/o Tip:  $ <input class='total' type='text' name='total'><br/>
-    <div id='slider' class='hidden'>
-      1% <input class='range' type="range" name="tip" min="1" max="30" value="15"> 30%<br/>
+    <div id='header'>
+      <h1>QuickTips</h1>
     </div>
-    <div id='choices' class='hidden'>
-      <a id='amazing' data-tip='0.30' href="#">Amazing!</a>
-      <a id='pretty-good' data-tip='0.20' href="#">Pretty Good</a>
-      <a id='decent' data-tip='0.15' href="#">Decent</a>
-      <a id='terrible' data-tip='0.05' href="#">Terrible!</a>
+
+    <form action='#' method='get' id='bill'>
+      Bill w/o Tip:  $ <input class='total' type='text' name='total' ng-model='billWithoutTip'><br/>
+      % Tip: <input type="text" ng-model='tipPercentage'><br/>
+    </form>
+
+    <div id='bill-with-tip'>
+      <p>Tip is: ${{calculateTip(billWithoutTip, tip(tipPercentage))}}</p>
+      <p>Total: ${{calculateBillWithTip(billWithoutTip, tip(tipPercentage))}}</p>
     </div>
-    <input type="submit" value="Show Tip" class='bill button'>
-  </form>
-
-  <div id='bill-with-tip'>
-    <p>Tip is: $0.00</p>
-    <p>Total: $0.00</p>
   </div>
-
 </body>
 </html>

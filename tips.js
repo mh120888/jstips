@@ -15,11 +15,6 @@ var BillController = {
     $("#bill").submit(BillController.calcAndDisplayOnPercentage);
     $('#choices a').on('click', BillController.calcAndDisplayOnImpression);
   },
-  calcAndDisplayOnPercentage: function() {
-    event.preventDefault();
-    BillCalculations.calculateBillAndTip();
-    BillViewer.displayBillWithTip();
-  },
   calcAndDisplayOnImpression: function() {
     event.preventDefault();
     BillCalculations.calcBillAndTip($(this));
