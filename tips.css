@@ -1,104 +1,25 @@
 body {
   text-align: center;
-  background: url('img/02.png'), #eee;
-  color: #333;
-  text-shadow: white 1px 1px;
+  font-size: 28px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#header {
+  background: #CC0000;
+  margin: -40px -8px 100px -8px;
+  padding: 8px 0 8px 0;
 }
 
 h1 {
-  margin: 1.5em;
-  font-size: 2.5em;
+  margin-bottom: 0;
 }
 
-a, .button {
-  text-decoration: none;
-  border-radius: 8px;
-  text-shadow: none;
-  color: white;
-  background-color: gray;
+form {
+  width: 204px;
+  margin: 0 auto;
+  text-align: right;
 }
 
-#selection a {
-  font-size: 2em;
+input {
+  width: 30px;
 }
-
-.hidden {
-  display: none;
-}
-
-div#selection {
-  width: 65%;
-  margin: 20px auto 0;
-}
-
-#selection a, .button {
-  margin-bottom: 1.2em;
-  padding: 0.7em;
-}
-
-#selection a:hover, .button:hover, #choices a:hover {
-  background-color: #C3D7E0;
-}
-
-#range a {
-  float: left;
-}
-
-#impression a {
-  float: right;
-}
-
-#slider {
-  margin: 1em;
-}
-
-input[type=text] {
-  height: 0.5em;
-  font-size: 28px;
-  padding: 1em;
-  position: relative;
-  top: -5px;
-}
-
-form#bill {
-  font-size: 30px;
-  clear: both;
-}
-
-#choices a {
-  padding: 0.4em;
-  display: block;
-  margin: 1em auto;
-  width: 20%;
-  min-width: 250px;
-}
-
-.button {
-  border: none;
-  margin-top: 1em;
-  font-size: 1em;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
-
-#bill-with-tip {
-  font-size: 2em;
-}
-
-@media screen and (max-width: 1120px) {
-
-  #selection #range a {
-    float: none;
-  }
-
-  #selection #impression a {
-    float: none;
-  }
-
-  #selection div {
-    margin: 5em auto;
-  }
-
-}
-
-/*@media screen and (max-width: )*/
